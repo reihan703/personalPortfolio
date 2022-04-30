@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root{
+  --body-font:'Poppins', sans-serif;
+  --light: #F8ECD1;
+  --dark: #85586F;
+  --light-shadow: #cfc5ae;
+  --dark-shadow: #684557;
+}
+
+html[data-theme = 'dark'] {
+  --light: #85586F;
+  --dark: #F8ECD1;
+  --dark-shadow: #cfc5ae;
+  --light-shadow: #684557;
+}
+
+html, body{
+  scroll-behavior: smooth;
+  background: var(--light);
+  color: var(--dark);
+  margin: 0;
+  padding: 0;
+  font-family: var(--body-font) !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.navbar {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card {
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.05);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(14.1px);
+-webkit-backdrop-filter: blur(14.1px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* COLOR CLASSES */
+.light {
+  color: var(--light);
+}
+
+.dark {
+  color: var(--dark);
+}
+
+.lightBG {
+  background: var(--light);
+}
+
+.darkBG {
+  background: var(--dark);
+}
+/* END */
+
+/* NAVBAR */
+.navbar .brand {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.navLinks {
+  list-style: none;
+}
+
+.navLinks li a { 
+  color: var(--dark);
+  text-decoration: none;
+  padding: 1rem;
+  display: block;
+  font-weight: bold;
+  font-size: .9rem;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--dark);
+  transition: transform .2s;
+}
+
+.link:hover {
+  color: var(--dark);
+  -ms-transform: scale(1.2);
+  /* IE 9 */
+  -webkit-transform: scale(1.2);
+  /* Safari 3-8 */
+  transform: scale(1.2);
+}
+
+.navLinks li {
+  transition: transform .2s;
+}
+
+.navLinks li:hover { 
+  -ms-transform: scale(1.2);
+  /* IE 9 */
+  -webkit-transform: scale(1.2);
+  /* Safari 3-8 */
+  transform: scale(1.2);
+}
+
+button {
+  outline: none;
+}
+/* NAVBAR */
+
+/* SECTIONS */
+section {
+  padding-top: 7rem;
+}
+
+.home {
+  padding-top: .3rem;
+  height: 100vh;
+}
+
+.aboutMe {
+  height: 1300px;
+}
+/* END */
+
+/* SOCIAL TAB */
+.social {
+  font-size: 3rem;
+}
+/* END */
+
+/* SUN AND MOON */
+.switch {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.themeIcon {
+  color: var(--dark);
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.themeIcon:hover {
+  color: #DEB6AB;
+}
+
+.flip {
+  transform: rotate(360deg) !important;
+}
+/* END */
+
+/* WAVES COLOR */
+path {
+  fill: var(--dark);
+}
+/* END */
+
+/* ARROW ON HOMEPAGE */
+.arrow {
+  animation: scrollDown 2s ease infinite;
+}
+
+.arrow a {
+  color: var(--dark);
+  text-decoration: none;
+}
+/* END */
+
+.personalProjects .container1 {
+  display: flex;
+  overflow-x: scroll;
+  padding: 4rem;
+}
+
+/* X SCROLLBAR */
+.personalProjects .container1::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.personalProjects .container1::-webkit-scrollbar-thumb {
+  background: var(--dark);
+  border-radius: 10px;
+  box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+}
+
+.personalProjects .container1::-webkit-scrollbar-track {
+  background: linear-gradient(90deg,var(--dark),var(--dark) 0px,var(--light) 0,var(--light));
+}
+/* END */
+
+/* PERSONAL PROJECTS CARD */
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 350px;
+  width: 400px;
+  min-width: 250px;
+  padding: 1.5rem;
+  transition: .2s;
+
+  border-radius: 16px;
+  background: var(--light);
+  box-shadow: -1rem 0 3rem var(--light-shadow);
+}
+
+.projectCard:hover {
+  transform: translateY(-1rem);
+}
+
+.projectCard:hover~.projectCard {
+  transform: translateX(130px);
+}
+
+.projectCard:not(:first-child) {
+  margin-left: -130px;
+}
+
+.projectHeader h2:hover {
+  background: linear-gradient(90deg,#ff8a00,#e52e71);
+  text-shadow: none;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tags {
+  margin: 1rem 0 2rem;
+  padding: .5rem 0 1rem;
+  line-height: 2;
+  margin-bottom: 0;
+}
+
+.tags a {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 700;
+  font-size: .5rem;
+  color: var(--dark);
+  text-transform: uppercase;
+  font-size: .66rem;
+  border: 3px solid var(--dark-shadow);
+  border-radius: 2rem;
+  padding: .2rem .85rem .25rem;
+  position: relative;
+  white-space: nowrap;
+}
+
+.tags a:hover {
+  background: linear-gradient(90deg,#ff8a00,#e52e71);
+  text-shadow: none;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-box-decoration-break: clone;
+  background-clip: text;
+  border-color: var(--light-shadow);
+}
+/* END */
+
+.PBot {
+  margin-top: -1px;
+}
+
+.description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.custom-shape-divider-top-1651295561 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1651295561 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-top-1651295561 .shape-fill {
+    fill: var(--light);
+}
+
+/* ARROW ANIMATION */
+@keyframes scrollDown {
+  0%, 20%, 50%, 80%, 100%{
+    transform: translateY(0);
+  }
+  40%{
+    transform: translateY(-30px);
+  }
+  60%{
+    transform: translateY(-15px);
+  }
+}
+/* END ARROW */
+
+
+/* IPAD AIR */
+@media only screen and (min-width:820px) and (min-height:1180px) {
+  .navLinks li {
+    width: 100%;
+  }
+
+  .navLinks li a {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .navbar .brand {
+    font-size: 2rem;
+    font-weight: bolder;
+  }
+
+  .social {
+    font-size: 2rem;
+  }
+
+  .home {
+    height: 90vh;
+  }
+
+  .aboutMe {
+    height: 80vh;
+  }
+
+  .PBot {
+    margin-top: -3px;
+  }
+}
+
+/* PIXEL 5 */
+@media only screen and (max-width:393px) and (max-height:851px) {
+  .navLinks li {
+    width: 100%;
+  }
+
+  .navLinks li a {
+    text-align: center;
+  }
+
+  .social {
+    font-size: 2rem;
+  }
+
+  .home {
+    height: 744px !important;
+  }
+
+  .aboutMe {
+    height: 744px !important;
+  }
+
+  .PBot {
+    margin-top: -2px;
+  }
+}
+
+/* IPHONE SE */
+@media only screen and (max-width:375px) and (max-height:667px) {
+  .navLinks li {
+    width: 100%;
+  }
+
+  .navLinks li a {
+    text-align: center;
+  }
+
+  .social {
+    font-size: 2rem;
+  }
+
+  .home {
+    height: 100vh;
+  }
+}
