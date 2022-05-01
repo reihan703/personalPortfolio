@@ -16,4 +16,15 @@ $(document).ready(function () {
     }
   });
   // END THEME
+
+  // LOAD MORE
+  $('.experienceCard').slice(0,2).show();
+  $('.loadMore').click(function (e) { 
+    $(".experienceCard:hidden").slice(0, 2).show();
+
+    if($(".experienceCard:hidden").length==0){
+      $('.loadMore').fadeOut();
+    }
+  });
+  // END LOAD
 });

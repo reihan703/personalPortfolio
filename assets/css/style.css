@@ -227,6 +227,11 @@ path {
   margin-left: -130px;
 }
 
+.projectHeader a{
+  text-decoration: none;
+  color: var(--dark);
+}
+
 .projectHeader h2:hover {
   background: linear-gradient(90deg,#ff8a00,#e52e71);
   text-shadow: none;
@@ -266,11 +271,6 @@ path {
   background-clip: text;
   border-color: var(--light-shadow);
 }
-/* END */
-
-.PBot {
-  margin-top: -1px;
-}
 
 .description {
   overflow: hidden;
@@ -278,25 +278,59 @@ path {
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
+/* END */
 
-.custom-shape-divider-top-1651295561 {
-    position: absolute;
-    top: 0;
+.PBot {
+  margin-top: -1px;
+  transform: rotate(180deg);
+}
+
+.experienceCard {
+  display: none;
+}
+
+button.loadMore, a.testimonial{
+  transition: transform .2s;
+}
+
+button.loadMore:hover, a.testimonial:hover{
+  color: var(--light);
+  -ms-transform: scale(1.2);
+  /* IE 9 */
+  -webkit-transform: scale(1.2);
+  /* Safari 3-8 */
+  transform: scale(1.2);
+}
+
+@keyframes xScroll {
+  0% {
     left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
+  }
+  100%{
+    left: -100%;
+  }
 }
 
-.custom-shape-divider-top-1651295561 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 150px;
+.pillTestimonial img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
 }
 
-.custom-shape-divider-top-1651295561 .shape-fill {
-    fill: var(--light);
+.pillTestimonial {
+  max-width: 20rem;
+  min-width: 20rem;
+}
+
+.animate {
+  width: 200%;
+  animation: xScroll 20s linear infinite;
+  top: 50%;
+  transform: translate(0,-50%);
+}
+
+.animate:hover {
+  animation-play-state: paused;
 }
 
 /* ARROW ANIMATION */
@@ -345,6 +379,35 @@ path {
   .PBot {
     margin-top: -3px;
   }
+
+  .pillTestimonial img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-top: 8px;
+  }
+
+  .pillTestimonial {
+    max-width: 15rem;
+    min-width: 15rem;
+    font-size: 15px;
+  }
+
+  .animate {
+    width: 240%;
+    animation: xScroll 20s linear infinite;
+    top: 50%;
+    transform: translate(0,-50%);
+  }
+
+  @keyframes xScroll {
+    0% {
+      left: 0;
+    }
+    100%{
+      left: -120%;
+    }
+  }
 }
 
 /* PIXEL 5 */
@@ -372,6 +435,35 @@ path {
   .PBot {
     margin-top: -2px;
   }
+
+  .pillTestimonial img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-top: 8px;
+  }
+
+  .pillTestimonial {
+    max-width: 15rem;
+    min-width: 15rem;
+    font-size: 15px;
+  }
+
+  .animate {
+    width: 500%;
+    animation: xScroll 20s linear infinite;
+    top: 50%;
+    transform: translate(0,-50%);
+  }
+
+  @keyframes xScroll {
+    0% {
+      left: 0;
+    }
+    100%{
+      left: -250%;
+    }
+  }
 }
 
 /* IPHONE SE */
@@ -390,5 +482,34 @@ path {
 
   .home {
     height: 100vh;
+  }
+
+  .pillTestimonial img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-top: 8px;
+  }
+
+  .pillTestimonial {
+    max-width: 15rem;
+    min-width: 15rem;
+    font-size: 15px;
+  }
+
+  .animate {
+    width: 520%;
+    animation: xScroll 20s linear infinite;
+    top: 50%;
+    transform: translate(0,-50%);
+  }
+
+  @keyframes xScroll {
+    0% {
+      left: 0;
+    }
+    100%{
+      left: -260%;
+    }
   }
 }
