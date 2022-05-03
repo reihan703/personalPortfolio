@@ -127,7 +127,7 @@ section {
   height: 100vh;
 }
 
-.aboutMe {
+.aboutMe, .workExperience {
   height: 1300px;
 }
 /* END */
@@ -167,7 +167,7 @@ path {
 
 /* ARROW ON HOMEPAGE */
 .arrow {
-  animation: scrollDown 2s ease infinite;
+  animation: jumpDown 2s ease infinite;
 }
 
 .arrow a {
@@ -176,25 +176,25 @@ path {
 }
 /* END */
 
+/* X SCROLLBAR */
 .personalProjects .container1 {
   display: flex;
   overflow-x: scroll;
   padding: 4rem;
 }
 
-/* X SCROLLBAR */
-.personalProjects .container1::-webkit-scrollbar {
+.personalProjects .container1::-webkit-scrollbar, ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
-.personalProjects .container1::-webkit-scrollbar-thumb {
+.personalProjects .container1::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb {
   background: var(--dark);
   border-radius: 10px;
   box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
 }
 
-.personalProjects .container1::-webkit-scrollbar-track {
+.personalProjects .container1::-webkit-scrollbar-track, ::-webkit-scrollbar-track {
   background: linear-gradient(90deg,var(--dark),var(--dark) 0px,var(--light) 0,var(--light));
 }
 /* END */
@@ -285,15 +285,19 @@ path {
   transform: rotate(180deg);
 }
 
+.PBot2 {
+  margin-top: -1px;
+}
+
 .experienceCard {
   display: none;
 }
 
-button.loadMore, a.testimonial{
+button.loadMore, a.testimonial, a.download {
   transition: transform .2s;
 }
 
-button.loadMore:hover, a.testimonial:hover{
+button.loadMore:hover, a.testimonial:hover, a.download:hover {
   color: var(--light);
   -ms-transform: scale(1.2);
   /* IE 9 */
@@ -333,8 +337,41 @@ button.loadMore:hover, a.testimonial:hover{
   animation-play-state: paused;
 }
 
+.buttonArea2 {
+  display: none !important;
+}
+
+.arrowLeft {
+  animation: jumpLeft 2s ease infinite;
+}
+
+.arrowRight {
+  animation: jumpRight 2s ease infinite;
+}
+
+.downloadWave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.downloadWave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+  transform: rotateY(180deg);
+}
+
+.downloadWave .shape-fill {
+  fill: var(--light);
+}
+
 /* ARROW ANIMATION */
-@keyframes scrollDown {
+@keyframes jumpDown {
   0%, 20%, 50%, 80%, 100%{
     transform: translateY(0);
   }
@@ -343,6 +380,30 @@ button.loadMore:hover, a.testimonial:hover{
   }
   60%{
     transform: translateY(-15px);
+  }
+}
+
+@keyframes jumpLeft {
+  0%, 20%, 50%, 80%, 100%{
+    transform: translateX(0);
+  }
+  40%{
+    transform: translateX(-30px);
+  }
+  60%{
+    transform: translateX(-15px);
+  }
+}
+
+@keyframes jumpRight {
+  0%, 20%, 50%, 80%, 100%{
+    transform: translateX(0);
+  }
+  40%{
+    transform: translateX(30px);
+  }
+  60%{
+    transform: translateX(15px);
   }
 }
 /* END ARROW */
@@ -398,6 +459,19 @@ button.loadMore:hover, a.testimonial:hover{
     animation: xScroll 20s linear infinite;
     top: 50%;
     transform: translate(0,-50%);
+  }
+
+  .workExperience {
+    height: 1050px;
+  }
+
+  .buttonArea {
+    display: none !important;
+  }
+
+  .buttonArea2 {
+    margin-top: 1.3rem;
+    display: block !important;
   }
 
   @keyframes xScroll {
@@ -456,6 +530,19 @@ button.loadMore:hover, a.testimonial:hover{
     transform: translate(0,-50%);
   }
 
+  .workExperience {
+    height: 1112px;
+  }
+
+  .buttonArea {
+    display: none !important;
+  }
+
+  .buttonArea2 {
+    margin-top: 1.3rem;
+    display: block !important;
+  }
+
   @keyframes xScroll {
     0% {
       left: 0;
@@ -502,6 +589,19 @@ button.loadMore:hover, a.testimonial:hover{
     animation: xScroll 20s linear infinite;
     top: 50%;
     transform: translate(0,-50%);
+  }
+  
+  .workExperience {
+    height: 1112px;
+  }
+
+  .buttonArea {
+    display: none !important;
+  }
+
+  .buttonArea2 {
+    margin-top: 1.3rem;
+    display: block !important;
   }
 
   @keyframes xScroll {
