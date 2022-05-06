@@ -117,6 +117,17 @@ button {
 }
 /* NAVBAR */
 
+.part {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 450ms;
+}
+
+.part.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* SECTIONS */
 section {
   padding-top: 7rem;
