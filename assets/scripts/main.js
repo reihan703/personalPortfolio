@@ -16,7 +16,7 @@ $(document).ready(function () {
     }
   });
   // END THEME
-
+  
   // LOAD MORE
   $('.experienceCard').slice(0,2).show();
   $('.loadMore').click(function (e) { 
@@ -47,4 +47,6 @@ $(document).ready(function () {
 		observer.observe(section);
 	});
   // END OBSERVER
+
+  
 });

@@ -1,0 +1,42 @@
+[
+  {
+    "date":"Jan 17 2022",
+    "title":"ShopHelperApp",
+    "titleLink":"https://github.com/reihan703/ShopHelperApp",
+    "description":"An app for shop owners to record their transactions and stocks, created using android studio. The app has its own cart system. min sdk 16",
+    "tags":["ANDROID STUDIO", "JAVA", "MOBILE-DEV"]
+
+  },
+  {
+    "date":"Jan 3 2022",
+    "title":"AntrianRS",
+    "titleLink":"https://github.com/reihan703/AntrianRS",
+    "description":"Making an app to help hospitals in giving the patient their queue number",
+    "tags":["ECLIPSE IDE", "JAVA"]
+
+  },
+  {
+    "date":"Nov 13 2021",
+    "title":"Marketplace",
+    "titleLink":"https://github.com/reihan703/Marketplace",
+    "description":"Creating a marketplace using Spring Boot. To use the web, users will need to register first and after that, they can start listing the stuff that they want to sell or buy on their profile page. Every listed item from all users can be viewed on the main page. The listed item will be shown in a table that is equipped with search and sort features",
+    "tags":["NETBEANS IDE", "JAVA", "WEB-DEV", "SPRING BOOT"]
+
+  },
+  {
+    "date":"Nov 13 2021",
+    "title":"LaundryWeb",
+    "titleLink":"https://github.com/reihan703/LaundryWeb",
+    "description":"Designing webpage for laundry, on this project our team is using JSP to accomplish the task.",
+    "tags":["NETBEANS IDE", "JAVA", "WEB-DEV"]
+
+  },
+  {
+    "date":"Apr 27 2022",
+    "title":"live-chat",
+    "titleLink":"https://github.com/reihan703/live-chat",
+    "description":"Creating live chatroom with vue (Ongoing)",
+    "tags":["VUE", "JAVASCRIPT"]
+
+  }
+]

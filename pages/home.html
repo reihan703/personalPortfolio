@@ -149,7 +149,7 @@
         My Personal Projects
       </div>
       <div class="container container1 dark">
-        <article class="projectCard">
+        <!-- <article class="projectCard">
           <header class="projectHeader">
             <p>Last Update: Jan 17 2022</p>
             <a href="https://github.com/reihan703/ShopHelperApp" target="_blank"><h2>ShopHelperApp</h2></a>
@@ -221,7 +221,7 @@
             <a href="https://github.com/reihan703?tab=repositories&q=&type=&language=vue&sort=" target="_blank">Vue</a>
             <a href="#">JavaScript</a>
           </div>
-        </article>
+        </article> -->
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,160L48,170.7C96,181,192,203,288,213.3C384,224,480,224,576,202.7C672,181,768,139,864,144C960,149,1056,203,1152,202.7C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
       <svg class="PBot" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,160L48,170.7C96,181,192,203,288,213.3C384,224,480,224,576,202.7C672,181,768,139,864,144C960,149,1056,203,1152,202.7C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
@@ -232,40 +232,9 @@
     <section class="workExperience part" id="workExperience">
       <div class="container d-flex flex-column flex-lg-row justify-content-between">
         <header class="display-6 mb-5 my-lg-auto mx-auto text-nowrap" style="font-weight: bold;"> My Work Experiences</header>
-
         <div class="d-flex flex-column">
           <div class="experienceCards d-flex flex-row flex-wrap justify-content-center justify-content-lg-end">
-            <div class="card mx-2 mb-3 experienceCard" style="width: 18rem;">
-              <img loading="lazy" src="../assets/img/logo.png" class="card-img-top" alt="logo">
-              <div class="card-body">
-                <h5 class="card-title" style="font-weight: bold;">PT. Empat Serangkai</h5>
-                <p class="card-text">Internship as a Web Developer. Developing online test system for the website.</p>
-              </div>
-            </div>
-
-            <div class="card mx-2 mb-3 experienceCard" style="width: 18rem;">
-              <img loading="lazy" src="../assets/img/logo.png" class="card-img-top" alt="logo">
-              <div class="card-body">
-                <h5 class="card-title" style="font-weight: bold;">PT. Empat Serangkai</h5>
-                <p class="card-text">Internship as a Web Developer. Developing online test system for the website.</p>
-              </div>
-            </div>
-
-            <div class="card mx-2 mb-3 experienceCard" style="width: 18rem;">
-              <img loading="lazy" src="../assets/img/logo.png" class="card-img-top" alt="logo">
-              <div class="card-body">
-                <h5 class="card-title" style="font-weight: bold;">PT. Empat Serangkai</h5>
-                <p class="card-text">Internship as a Web Developer. Developing online test system for the website.</p>
-              </div>
-            </div>
-
-            <div class="card mx-2 mb-3 experienceCard" style="width: 18rem;">
-              <img loading="lazy" src="../assets/img/logo.png" class="card-img-top" alt="logo">
-              <div class="card-body">
-                <h5 class="card-title" style="font-weight: bold;">PT. Empat Serangkai</h5>
-                <p class="card-text">Internship as a Web Developer. Developing online test system for the website.</p>
-              </div>
-            </div>
+            <!-- DATA FROM JSON -->
           </div>
           <button class="btn darkBG light loadMore mx-auto text-nowrap">Load More</button>
         </div>
@@ -467,5 +436,47 @@
       </div>
     </section>
     <!-- END FOOTER SECTION -->
+
+    <!-- READ WORK EXPERIENCE JSON -->
+    <script>
+      $.getJSON("../assets/json/workExperience.json", function (data) {
+        var items = []
+        $.each(data, function (i, v) { 
+          items.push('<div class="card mx-2 mb-3 experienceCard" style="width: 18rem;"><img loading="lazy" src="../assets/img/'+v.logo+'" class="card-img-top" alt="logo"><div class="card-body"><h5 class="card-title" style="font-weight: bold;">'+v.company+'</h5><p class="card-text">'+v.text+'</p></div></div>')
+        });
+        $(".experienceCards").append(items);
+      });
+    </script>
+    <!-- END READ WORK EXPERIENCE -->
+
+    <!-- READ PERSONAL PROJECTS JSON -->
+    <script>
+      $.getJSON("../assets/json/personalProjects.json", function (data) {
+        var counter = 0
+        var items = []
+        var tags = []
+        $.each(data, function (i, v) { 
+          items.push('<article class="projectCard"><header class="projectHeader"><p>Last Update: '+v.date+'</p><a href="'+v.titleLink+'" target="_blank"><h2>'+v.title+'</h2></a></header><span class="description">'+v.description+'</span><div class="tags d-flex flex-row flex-wrap '+counter+'"></div></article>')
+
+          // LOOP THROUGH TAGS ARRAY FOR EACH CARD
+          v.tags.forEach(tag => {
+            tags.push('<a href="#" class="mx-1 mt-1 text-nowrap">'+tag+'</a>')
+            console.log(tag)
+            return
+          });
+
+          // APPEND THE HTML TO CLASS
+          $(".container1").append(items);
+          $('.'+counter+' ').append(tags);
+
+          // RESET THE HTML ARRAY
+          tags = []
+          items = []
+
+          counter++;
+        });
+      });
+    </script>
+    <!-- END READ PERSONAL PROJECTS JSON -->
   </body>
 </html> 
