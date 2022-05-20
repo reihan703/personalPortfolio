@@ -387,6 +387,7 @@
           items.push('<article class="projectCard"><header class="projectHeader"><p>Last Update: '+v.date+'</p><a href="'+v.titleLink+'" target="_blank"><h2>'+v.title+'</h2></a></header><span class="description">'+v.description+'</span><div class="tags d-flex flex-row flex-wrap '+counter+'"></div></article>')
 
           // LOOP THROUGH TAGS ARRAY FOR EACH CARD
+          // v.tags is the tags in JSON
           v.tags.forEach(tag => {
             tags.push('<a href="#" class="mr-1 mt-1 py-1 text-nowrap ">'+tag+'</a>')
             console.log(tag)
